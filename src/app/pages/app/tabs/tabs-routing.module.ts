@@ -31,6 +31,11 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: '',
+    redirectTo: 'news',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

@@ -11,4 +11,8 @@ export class AuthService {
       doc.forEach((x) => console.log(x.data()));
     });
   }
+
+  public isAuthenticated(): boolean {
+    return false;
+  }
 }

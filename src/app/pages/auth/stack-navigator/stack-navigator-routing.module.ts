@@ -8,12 +8,12 @@ const routes: Routes = [
     component: StackNavigatorComponent,
     children: [
       {
-        path: 'register',
+        path: 'login',
         loadChildren: () =>
           import('../login/login.module').then((m) => m.LoginPageModule),
       },
       {
-        path: 'login',
+        path: 'register',
         loadChildren: () =>
           import('../register/register.module').then(
             (m) => m.RegisterPageModule
@@ -25,6 +25,11 @@ const routes: Routes = [
         pathMatch: 'full',
       },
     ],
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
 ];
 
