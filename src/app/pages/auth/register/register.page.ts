@@ -11,6 +11,7 @@ export class RegisterPage implements OnInit {
   registerForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
+    password2: new FormControl(''),
   });
 
   constructor(public authService: AuthService) {}

@@ -5,17 +5,32 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  browserSessionPersistence,
+  setPersistence,
+  inMemoryPersistence,
+  User,
 } from 'firebase/auth';
 import { UserLogin, UserRegister } from 'src/types/db/user';
+import { Route, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  user: User | null = null;
+
+  constructor(public router: Router) {
+    const auth = getAuth();
+    auth.onAuthStateChanged((res) => {
+      this.user = res;
+      if (this.user) {
+        router.navigate(['/news']);
+      }
+    });
+  }
 
   public isAuthenticated(): boolean {
-    return false;
+    return this.user ? true : false;
   }
 
   public async login(payload: UserLogin) {
@@ -28,6 +43,8 @@ export class AuthService {
       );
       console.log(response.user.email);
       console.log('login success');
+      console.log(auth.currentUser?.email);
+      response.user.uid;
     } catch (err: any) {
       const errorCode = err.code;
       const errorMessage = err.message;
