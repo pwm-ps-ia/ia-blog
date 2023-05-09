@@ -41,14 +41,10 @@ export class AuthService {
         payload.email,
         payload.password
       );
-      console.log(response.user.email);
-      console.log('login success');
-      console.log(auth.currentUser?.email);
       response.user.uid;
     } catch (err: any) {
       const errorCode = err.code;
       const errorMessage = err.message;
-      console.log('error login');
     }
   }
   public async register(payload: UserRegister) {
@@ -60,15 +56,16 @@ export class AuthService {
         payload.email,
         payload.password
       );
-      console.log(response.user.email);
-      console.log('success');
-    } catch (err: any) {
-      console.log('error');
-    }
+      await this.login({
+        email: payload.email,
+        password: payload.password,
+      });
+    } catch (err: any) {}
   }
   public async logOut() {
     const auth = getAuth();
     const response = await auth.signOut();
     this.user = null;
+    this.router.navigate(['/auth/login']);
   }
 }
