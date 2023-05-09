@@ -66,5 +66,9 @@ export class AuthService {
       console.log('error');
     }
   }
-  public logOut() {}
+  public async logOut() {
+    const auth = getAuth();
+    const response = await auth.signOut();
+    this.user = null;
+  }
 }
