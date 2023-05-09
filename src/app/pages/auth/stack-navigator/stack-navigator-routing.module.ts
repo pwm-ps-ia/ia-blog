@@ -4,7 +4,7 @@ import { StackNavigatorComponent } from './stack-navigator.component';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: '',
     component: StackNavigatorComponent,
     children: [
       {
