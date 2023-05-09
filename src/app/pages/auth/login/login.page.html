@@ -4,13 +4,25 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <div class="flex flex-col gap-y-9 h-full justify-center">
+  <form
+    class="flex flex-col gap-y-9 h-full justify-center"
+    [formGroup]="loginForm"
+  >
     <div class="flex flex-col gap-y-4">
-      <input class="px-5 py-3 rounded-lg" placeholder="email" />
-      <input class="px-5 py-3 rounded-lg" placeholder="password" />
+      <input
+        class="px-5 py-3 rounded-lg"
+        placeholder="email"
+        formControlName="email"
+      />
+      <input
+        class="px-5 py-3 rounded-lg"
+        placeholder="password"
+        formControlName="password"
+      />
     </div>
     <div class="flex flex-col gap-y-4">
       <button
+        (click)="login()"
         class="w-full px-5 py-3 font-semibold bg-red-500 rounded-lg hover:bg-red-600 active:bg-red-700 transition-all"
       >
         Sign in
@@ -21,5 +33,5 @@
         Sign up
       </button>
     </div>
-  </div>
+  </form>
 </ion-content>

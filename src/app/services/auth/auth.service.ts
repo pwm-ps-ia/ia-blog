@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { collection, doc, onSnapshot } from 'firebase/firestore';
-import { db } from '../../../firebase';
+
 import {
   getAuth,
   signInWithEmailAndPassword,
