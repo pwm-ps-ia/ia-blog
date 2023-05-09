@@ -4,12 +4,22 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
-  <h3>Heading 3</h3>
-  <h4>Heading 4</h4>
-  <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
-
-  <button>login</button>
+  <div class="flex flex-col gap-y-9 h-full justify-center">
+    <div class="flex flex-col gap-y-4">
+      <input class="px-5 py-3 rounded-lg" placeholder="email" />
+      <input class="px-5 py-3 rounded-lg" placeholder="password" />
+    </div>
+    <div class="flex flex-col gap-y-4">
+      <button
+        class="w-full px-5 py-3 font-semibold bg-red-500 rounded-lg hover:bg-red-600 active:bg-red-700 transition-all"
+      >
+        Sign in
+      </button>
+      <button
+        class="w-full px-5 py-3 font-semibold rounded-lg border-red-500 border-2 transition-all"
+      >
+        Sign up
+      </button>
+    </div>
+  </div>
 </ion-content>
