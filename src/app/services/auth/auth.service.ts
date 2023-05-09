@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { collection, doc, onSnapshot } from 'firebase/firestore';
+import { db } from '../../../firebase';
 import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
-import { db } from '../../../firebase';
 import { UserLogin, UserRegister } from 'src/types/db/user';
-import { create } from 'domain';
 
 @Injectable({
   providedIn: 'root',
