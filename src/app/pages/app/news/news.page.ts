@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { NewsCardComponent } from 'src/app/components/news/news-card/news-card.component';
 
 @Component({
   selector: 'app-news',
@@ -8,6 +9,6 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class NewsPage implements OnInit {
   constructor(public authService: AuthService) {}
-
+  NewsCardComponent = NewsCardComponent;
   ngOnInit() {}
 }

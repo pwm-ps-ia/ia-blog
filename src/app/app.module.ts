@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { StackNavigatorModule } from './pages/auth/stack-navigator/stack-navigator.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
