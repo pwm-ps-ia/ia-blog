@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  
+  <div style="width: 100%; height: 3.75rem; background-color:#F54E4E ;"></div>
+  <section style="transform: translateY(-30px);">
   <div>
     <ion-searchbar class="custom" animated="true" placeholder="Search"></ion-searchbar>
   </div>
@@ -15,9 +18,10 @@
       <option value="2">Value 2</option>
   </select>    
   </div>
-  
-  <app-news-card></app-news-card>
-  <app-news-card></app-news-card>
-  <app-news-card></app-news-card>
-
+  <div class = " flex flex-col p-2 gap-y-3">
+    <app-news-card routerLink = "/new-detailed"></app-news-card>
+    <app-news-card></app-news-card>
+    <app-news-card></app-news-card>  
+  </div>
+</section>
 </ion-content>
