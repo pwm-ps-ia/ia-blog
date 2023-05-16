@@ -10,5 +10,5 @@ export class NewsCardComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
+  
 }

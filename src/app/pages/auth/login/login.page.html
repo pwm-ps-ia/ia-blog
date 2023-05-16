@@ -3,11 +3,36 @@
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form
+    class="flex flex-col gap-y-9 h-full justify-center"
+    [formGroup]="loginForm"
+  >
+    <div class="flex flex-col gap-y-4">
+      <input
+        class="px-5 py-3 rounded-lg"
+        placeholder="email"
+        formControlName="email"
+      />
+      <input
+        class="px-5 py-3 rounded-lg"
+        placeholder="password"
+        formControlName="password"
+      />
+    </div>
+    <div class="flex flex-col gap-y-4">
+      <button
+        (click)="login()"
+        class="w-full px-5 py-3 font-semibold bg-red-500 rounded-lg hover:bg-red-600 active:bg-red-700 transition-all"
+      >
+        Sign in
+      </button>
+      <button
+        routerLink="/auth/register"
+        class="w-full px-5 py-3 font-semibold rounded-lg border-red-500 border-2 transition-all"
+      >
+        Sign up
+      </button>
+    </div>
+  </form>
 </ion-content>

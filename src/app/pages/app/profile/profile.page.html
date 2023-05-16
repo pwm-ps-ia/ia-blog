@@ -1,13 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title class="ion-text-center">Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div style="width: 100%; height: 3.75rem; background-color:#F54E4E ;"></div>
+  <div style="position: relative; display: inline-block; padding-left: 0.938rem; margin-left: 32%;">
+    <img src="./assets/470373.jpg" alt="Descripción de la imagen" style="width: 6rem; height: 6rem; transform: translateY(-40px); border-radius: 50%; box-shadow: 0px 0px 0px 4px white;">
+  </div>
+
+  <ion-card class = "ion-text-left" style="transform: translateY(-50px);">
+    <ion-card-header>
+      <ion-card-title style = "color:#272727; font-weight: 600; font-size: 1.25rem;">Personal Information</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="display: flex;flex-direction: column; row-gap: 20px;">
+      <div>
+        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">UserName:</h1>
+        <p>MaryJane</p>  
+      </div>
+      <div>
+        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">Name:</h1>
+        <p>Mary</p>  
+      </div>
+      <div>
+        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">Surname:</h1>
+        <p>Jane</p>  
+      </div>
+      <div>
+        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">Gmail:</h1>
+        <p>Marypsacross69@gmail.com</p>  
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <div>
+    <button (click)="this.auth.logOut()" style = "height: 40px; width: 150px;margin-left: 30%; background-color: #F54E4E; transform: translateY(-20px); color: white; font-weight: 600; border-radius: 12px;">
+      Log Out
+    </button>
+  </div>
+  
 </ion-content>

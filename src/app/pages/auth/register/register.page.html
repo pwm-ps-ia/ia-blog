@@ -1,13 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-title>
+      <ion-row class="ion-align-items-center">
+        <ion-back-button defaultHref="/"></ion-back-button>
+        <ion-text class="ion-margin-start">register </ion-text>
+      </ion-row>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form
+    class="flex flex-col gap-y-9 h-full justify-center"
+    [formGroup]="this.registerForm"
+  >
+    <div class="flex flex-col gap-y-4">
+      <input
+        class="px-5 py-3 rounded-lg"
+        placeholder="email"
+        formControlName="email"
+      />
+      <input
+        class="px-5 py-3 rounded-lg"
+        placeholder="password"
+        formControlName="password"
+      />
+      <input
+        class="px-5 py-3 rounded-lg"
+        placeholder="Confirm password"
+        formControlName="password2"
+      />
+    </div>
+    <div class="flex flex-col gap-y-4">
+      <button
+        (click)="register()"
+        class="w-full px-5 py-3 font-semibold bg-red-500 rounded-lg hover:bg-red-600 active:bg-red-700 transition-all"
+      >
+        Sign up
+      </button>
+    </div>
+  </form>
 </ion-content>

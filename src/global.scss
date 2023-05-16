@@ -16,7 +16,7 @@
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
-@import '@ionic/angular/css/display.css';
+@import "@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
@@ -24,3 +24,47 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ion-content{
+    --ion-background-color:#F5F5F5;
+}
+ion-title {
+    color: #F54E4E;
+}
+ion-searchbar.custom {
+    --background: white;
+:root {
+    --ion-color-secondary: rgb(255, 255, 255);
+    --ion-color-secondary-rgb: 255, 255, 255;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: white;
+    --ion-color-secondary-tint: white;
+  }
+  }
+
+#popover-button{
+     border-radius: 5px;
+     width: 100%;
+     padding-top: 12px;
+     padding-bottom: 12px;
+}
+  
+:root {
+    --ion-color-secondary: rgb(255, 255, 255);
+    --ion-color-secondary-rgb: 255, 255, 255;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: white;
+    --ion-color-secondary-tint: white;
+    --ion-color-tertiary: #717171;
+    --ion-color-tertiary-rgb: 113, 113, 113;
+    --ion-color-tertiary-contrast: #717171;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: 717171;
+    --ion-color-tertiary-tint: 717171;
+  }   
