@@ -5,26 +5,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-  <div style="width: 100%; height: 3.75rem; background-color:#F54E4E ;"></div>
-  <section style="transform: translateY(-30px);">
-  <div>
-    <ion-searchbar class="custom" animated="true" placeholder="Search"></ion-searchbar>
-  </div>
-  <div>        
-    <select style="width: 351px; height: 36px; margin-left: 13px; background-color: white; color: #666666; border-radius: 8px;text-align-last: center; ">
-      <option value="" disabled selected>Categories</option>
-      <option value="1">Value 1</option>
-      <option value="2">Value 2</option>
-  </select>    
-  </div>
-  <div class = " flex flex-col p-2 gap-y-3">
-    <app-news-card *ngFor="let doc of docs"
-      [news]="doc"
-      [isFav]="isFav(doc.id)"
-      [routerLink] = "'/new-detailed/' + doc.id"
-      (favClick)="toggleFav($event)"
-    ></app-news-card>
-  </div>
-</section>
+  <div style="width: 100%; height: 3.75rem; background-color: #f54e4e"></div>
+  <section style="transform: translateY(-30px)">
+    <div>
+      <ion-searchbar
+        class="custom"
+        animated="true"
+        placeholder="Search"
+      ></ion-searchbar>
+    </div>
+    <div class="mx-3 shadow-sm">
+      <select class="w-full py-2 px-3 rounded-lg font-semibold">
+        <option value="" disabled selected>Categories</option>
+        <option value="1">Value 1</option>
+        <option value="2">Value 2</option>
+      </select>
+    </div>
+    <div class="flex flex-col p-2 gap-y-3">
+      <app-news-card
+        *ngFor="let doc of docs"
+        [news]="doc"
+        [isFav]="isFav(doc.id)"
+        [routerLink]="'/new-detailed/' + doc.id"
+        (favClick)="toggleFav($event)"
+      ></app-news-card>
+    </div>
+  </section>
 </ion-content>
