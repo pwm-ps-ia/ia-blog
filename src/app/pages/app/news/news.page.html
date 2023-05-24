@@ -19,8 +19,10 @@
   </select>    
   </div>
   <div class = " flex flex-col p-2 gap-y-3">
-    <app-news-card routerLink = "/new-detailed"></app-news-card>
-    <app-news-card *ngFor="let doc of docs"></app-news-card>
+    <app-news-card *ngFor="let doc of docs"
+      [news]="doc"
+      routerLink = "/new-detailed"
+    ></app-news-card>
   </div>
 </section>
 </ion-content>

@@ -18,4 +18,8 @@ export class NewsPage implements OnInit {
       this.docs = x.docs
     });
   }
+
+  toggleFav() {
+
+  }
 }
