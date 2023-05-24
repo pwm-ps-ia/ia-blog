@@ -17,10 +17,10 @@
     />
   </div>
   <div class="mx-5 rounded-lg">
-    <div class="p-5 w-full bg-white shadow-sm rounded-lg flex flex-col gap-y-5">
-      <h1 class="text-xl font-semibold text-gray-800">Personal Information</h1>
+    <div class="p-5 w-full bg-white shadow-sm rounded-md flex flex-col gap-y-5">
+      <h1 class="text-md font-semibold text-gray-800">Personal Information</h1>
       <div>
-        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">
+        <h1 class="mb-1" class="text-gray-800 text-md font-semibold">
           UserName:
         </h1>
         <div class="flex justify-between items-center">
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div>
-        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">Name:</h1>
+        <h1 class="mb-1" class="text-gray-800 text-md font-semibold">Name:</h1>
 
         <div class="flex justify-between items-center">
           <p *ngIf="!this.editFirstName" class="text-gray-500">
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div>
-        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">
+        <h1 class="mb-1" class="text-gray-800 text-md font-semibold">
           Surname:
         </h1>
         <div class="flex justify-between items-center">
@@ -90,7 +90,7 @@
         </div>
       </div>
       <div>
-        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">Gmail:</h1>
+        <h1 class="mb-1" class="text-gray-800 text-md font-semibold">Gmail:</h1>
         <div class="flex justify-between items-center">
           <p *ngIf="!this.editEmail" class="text-gray-500">
             {{ this.auth.user?.email }}

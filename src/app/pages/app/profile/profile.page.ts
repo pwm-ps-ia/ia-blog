@@ -16,6 +16,7 @@ export class ProfilePage implements OnInit {
   editLastName = false;
   editFirstName = false;
   editUserName = false;
+
   constructor(public auth: AuthService, public profService: ProfileService) {}
 
   disableAllEdits() {
@@ -32,6 +33,7 @@ export class ProfilePage implements OnInit {
   }
 
   submitChanges(update: any) {
+    console.log('entered');
     this.profService.updateProfile(this.auth.user?.uid ?? '', update);
   }
 }
