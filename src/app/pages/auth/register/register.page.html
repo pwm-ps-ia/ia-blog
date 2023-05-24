@@ -14,35 +14,57 @@
     class="flex flex-col gap-y-9 h-full justify-center"
     [formGroup]="this.registerForm"
   >
+    <div class="flex flex-col justify-center items-center mb-10">
+      <h1 class="font-semibold text-gray-700 text-4xl text-center">
+        <span class="text-red-500">Create</span> an account
+      </h1>
+      <h1 class="text-gray-700 text-md text-center mt-3">
+        Every journey begins with a single step!
+      </h1>
+    </div>
     <div class="flex flex-col gap-y-4">
+      <label class="text-gray-500">Username</label>
       <input
         class="w-full px-5 py-3 rounded-lg"
         placeholder="username"
         formControlName="username"
       />
       <div class="flex items-center gap-x-3 w-full">
-        <input
-          class="w-full px-5 py-3 rounded-lg"
-          placeholder="first name"
-          formControlName="first_name"
-        />
-        <input
-          class="w-full px-5 py-3 rounded-lg"
-          placeholder="last name"
-          formControlName="last_name"
-        />
+        <div>
+          <label class="mb-3 text-gray-500">first name</label>
+          <input
+            class="w-full px-5 py-3 rounded-lg"
+            placeholder="first name"
+            formControlName="first_name"
+          />
+        </div>
+
+        <div>
+          <label class="mb-3 text-gray-500">last name</label>
+          <input
+            class="w-full px-5 py-3 rounded-lg"
+            placeholder="last name"
+            formControlName="last_name"
+          />
+        </div>
       </div>
+
+      <label class="text-gray-500">email</label>
       <input
         class="px-5 py-3 rounded-lg"
         placeholder="email"
         formControlName="email"
       />
+
+      <label class="text-gray-500">password</label>
       <input
         class="px-5 py-3 rounded-lg"
         placeholder="password"
         formControlName="password"
         type="password"
       />
+
+      <label class="text-gray-500">confirm password</label>
       <input
         class="px-5 py-3 rounded-lg"
         placeholder="Confirm password"
@@ -57,6 +79,16 @@
       >
         Sign up
       </button>
+    </div>
+    <div class="flex items-center justify-center">
+      <p class="font-normal text-gray-400">
+        have an account?
+        <span
+          routerLink="/auth/login"
+          class="w-full px-1 py-3 font-semibold transition-all !text-gray-700"
+          >Log in</span
+        >
+      </p>
     </div>
   </form>
 </ion-content>
