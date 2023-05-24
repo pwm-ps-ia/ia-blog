@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
 
 @Component({
   selector: 'app-favourite-card',
@@ -11,4 +12,10 @@ export class FavouriteCardComponent  implements OnInit {
 
   ngOnInit() {}
 
+  onClick () {
+    this.favClick.emit(this.fav.id);
+  }
+
+  @Input() fav!: QueryDocumentSnapshot<DocumentData>;
+  @Output() favClick = new EventEmitter<string>();
 }

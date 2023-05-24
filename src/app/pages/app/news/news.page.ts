@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
+import { NewsService } from 'src/app/services/app/news/news.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -7,7 +9,13 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./news.page.scss'],
 })
 export class NewsPage implements OnInit {
-  constructor(public authService: AuthService) {}
+  docs: QueryDocumentSnapshot<DocumentData>[] = [];
 
-  ngOnInit() {}
+  constructor(public authService: AuthService, public newsService: NewsService) {}
+
+  ngOnInit() {
+    this.newsService.getNews().then(x => {
+      this.docs = x.docs
+    });
+  }
 }
