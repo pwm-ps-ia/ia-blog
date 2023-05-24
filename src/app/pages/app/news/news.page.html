@@ -22,7 +22,7 @@
     <app-news-card *ngFor="let doc of docs"
       [news]="doc"
       [isFav]="isFav(doc.id)"
-      routerLink = "/new-detailed"
+      [routerLink] = "'/new-detailed/' + doc.id"
       (favClick)="toggleFav($event)"
     ></app-news-card>
   </div>
