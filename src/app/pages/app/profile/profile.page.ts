@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { DocumentData } from 'firebase/firestore';
 import { ProfileService } from 'src/app/services/app/profile/profile.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -28,5 +29,9 @@ export class ProfilePage implements OnInit {
     this.profService.getProfile(this.auth.user?.uid ?? '').then((x) => {
       this.profile = x.docs[0].data();
     });
+  }
+
+  submitChanges(update: any) {
+    this.profService.updateProfile(this.auth.user?.uid ?? '', update);
   }
 }
