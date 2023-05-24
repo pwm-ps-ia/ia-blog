@@ -16,9 +16,6 @@ export class RegisterPage implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
     password2: new FormControl(''),
-    first_name: new FormControl(''),
-    last_name: new FormControl(''),
-    username: new FormControl(''),
   });
 
   constructor(public authService: AuthService, public profService: ProfileService) {}
