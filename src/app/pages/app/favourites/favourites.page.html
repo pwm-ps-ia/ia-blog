@@ -19,9 +19,11 @@
       </select>
     </div>
     <div class=" flex flex-col p-2 gap-y-3">
-      <app-favourite-card></app-favourite-card>
-      <app-favourite-card></app-favourite-card>
-      <app-favourite-card></app-favourite-card>
+      <app-favourite-card *ngFor="let fav of favs" 
+        [fav]="fav"
+        [news]="getNews(fav.id)"
+        routerLink = "/new-detailed"
+      ></app-favourite-card>
     </div>
   </section>
 </ion-content>

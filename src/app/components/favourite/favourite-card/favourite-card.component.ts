@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
+import { DocumentData, DocumentSnapshot, QueryDocumentSnapshot } from 'firebase/firestore';
 
 @Component({
   selector: 'app-favourite-card',
@@ -17,5 +17,6 @@ export class FavouriteCardComponent  implements OnInit {
   }
 
   @Input() fav!: QueryDocumentSnapshot<DocumentData>;
+  @Input() news!: DocumentSnapshot<DocumentData>;
   @Output() favClick = new EventEmitter<string>();
 }

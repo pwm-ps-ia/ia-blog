@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, getDocs, addDoc, doc, query, where, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, doc, query, where, deleteDoc, getDoc } from 'firebase/firestore';
 import { db } from 'src/main';
 
 @Injectable({
@@ -11,6 +11,10 @@ export class FavsService {
 
   getFavs(userUid: string) {
     return getDocs(query(collection(db, "favourite_news"), where("user_id", "==", userUid)));
+  }
+
+  getFavNew(newsUid: string) {
+    return getDoc(doc(db, "news", newsUid));
   }
 
   makeFav(userUid: string, newsUid: string) {
