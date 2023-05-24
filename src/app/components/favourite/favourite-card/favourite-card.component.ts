@@ -1,18 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DocumentData, DocumentSnapshot, QueryDocumentSnapshot } from 'firebase/firestore';
+import {
+  DocumentData,
+  DocumentSnapshot,
+  QueryDocumentSnapshot,
+} from 'firebase/firestore';
 
 @Component({
   selector: 'app-favourite-card',
   templateUrl: './favourite-card.component.html',
   styleUrls: ['./favourite-card.component.scss'],
 })
-export class FavouriteCardComponent  implements OnInit {
-
-  constructor() { }
+export class FavouriteCardComponent implements OnInit {
+  constructor() {}
 
   ngOnInit() {}
 
-  onClick () {
+  onClick() {
     this.favClick.emit(this.fav.id);
   }
 

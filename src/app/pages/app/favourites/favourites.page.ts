@@ -45,6 +45,7 @@ export class FavouritesPage implements OnInit {
   }
 
   removeFav(favUid: string) {
+    this.ngOnInit();
     this.favService
       .removeFav(favUid)
       .then((x) => {
