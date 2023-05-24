@@ -10,6 +10,9 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class RegisterPage implements OnInit {
   registerForm = new FormGroup({
+    username: new FormControl(''),
+    first_name: new FormControl(''),
+    last_name: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
     password2: new FormControl(''),

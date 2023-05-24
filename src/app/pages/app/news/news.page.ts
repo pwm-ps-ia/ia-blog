@@ -20,34 +20,43 @@ export class NewsPage implements OnInit {
     public favService: FavsService
   ) {}
 
+  ionViewWillEnter() {
+    this.ngOnInit();
+  }
+
   ngOnInit() {
-    this.newsService.getNews().then(x => {
-      this.docs = x.docs
-      x.docs.map(y => y.id).forEach(y => this.favService.getNewsFav(y).then(z => {
-        this.favs.push(z.docs.length >= 1);
-        if (z.docs.length >= 1) {
-          this.newsToFavMap.set(y, z.docs[0].id);
-        }
-      }));
+    this.newsService.getNews().then((x) => {
+      this.docs = x.docs;
+      x.docs
+        .map((y) => y.id)
+        .forEach((y) =>
+          this.favService.getNewsFav(y).then((z) => {
+            this.favs.push(z.docs.length >= 1);
+            if (z.docs.length >= 1) {
+              this.newsToFavMap.set(y, z.docs[0].id);
+            }
+          })
+        );
     });
   }
 
   isFav(newsUid: string) {
-    return this.favs[this.docs.findIndex(x => x.id === newsUid)];    
+    return this.favs[this.docs.findIndex((x) => x.id === newsUid)];
   }
 
   toggleFav(newsUid: string) {
-    const favIndex = this.docs.findIndex(x => x.id === newsUid);
+    const favIndex = this.docs.findIndex((x) => x.id === newsUid);
     const fav = this.favs[favIndex];
-    console.log("estamos", fav);
-    
+    console.log('estamos', fav);
+
     if (!fav) {
-      this.favService.makeFav(this.authService.user?.uid ?? '', newsUid).then(x => {
-        this.newsToFavMap.set(newsUid, x.id)
-        this.favs[favIndex] = true;
-      });
-    }
-    else if (this.newsToFavMap.has(newsUid)) {
+      this.favService
+        .makeFav(this.authService.user?.uid ?? '', newsUid)
+        .then((x) => {
+          this.newsToFavMap.set(newsUid, x.id);
+          this.favs[favIndex] = true;
+        });
+    } else if (this.newsToFavMap.has(newsUid)) {
       this.favService.removeFav(this.newsToFavMap.get(newsUid) ?? '');
       this.favs[favIndex] = false;
     }

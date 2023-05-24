@@ -12,25 +12,26 @@ import { User } from 'src/types/db/user';
 })
 export class ProfilePage implements OnInit {
   profile!: DocumentData;
-  modifying = false;
-
+  editEmail = false;
+  editLastName = false;
+  editFirstName = false;
+  editUserName = false;
   constructor(public auth: AuthService, public profService: ProfileService) {}
 
-  ngOnInit() {
-    this.profService.getProfile(this.auth.user?.uid ?? "").then(x => {
-      this.profile = x.docs[0].data();
-    })
+  disableAllEdits() {
+    this.editEmail = false;
+    this.editLastName = false;
+    this.editFirstName = false;
+    this.editUserName = false;
   }
 
-  clickEdit(update: any) {
-    if (this.modifying) {
-      this.submitChanges(update)
-    }
-    
-    this.modifying = !this.modifying;
+  ngOnInit() {
+    this.profService.getProfile(this.auth.user?.uid ?? '').then((x) => {
+      this.profile = x.docs[0].data();
+    });
   }
 
   submitChanges(update: any) {
-    this.profService.updateProfile(this.auth.user?.uid ?? '', update)
+    this.profService.updateProfile(this.auth.user?.uid ?? '', update);
   }
 }
