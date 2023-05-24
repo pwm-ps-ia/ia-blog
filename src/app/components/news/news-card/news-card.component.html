@@ -4,6 +4,13 @@
       [src]="news.data()['img']"
       class="w-full h-56"
     />
+    <button 
+      class="absolute top-0 right-0 m-3 w-7 h-7 flex font-extrabold items-center justify-center rounded-full"
+      (click)="onClick(); $event.stopPropagation()"
+      [ngClass]="isFav ? 'bg-red-500 text-white' : 'bg-slate-100 text-gray-500'"
+    >
+    ♡
+    </button>
   </section>
 
   <section class="px-2">

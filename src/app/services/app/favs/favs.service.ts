@@ -13,6 +13,10 @@ export class FavsService {
     return getDocs(query(collection(db, "favourite_news"), where("user_id", "==", userUid)));
   }
 
+  getNewsFav(newsUid: string) {
+    return getDocs(query(collection(db, "favourite_news"), where("news_id", "==", newsUid)));
+  }
+
   getFavNew(newsUid: string) {
     return getDoc(doc(db, "news", newsUid));
   }

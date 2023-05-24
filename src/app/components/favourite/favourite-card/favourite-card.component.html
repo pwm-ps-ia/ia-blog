@@ -4,6 +4,12 @@
       [src]="news.get('img')"
       class="w-full h-56"
     />
+    <button 
+      class="absolute top-0 right-0 m-3 w-7 h-7 bg-red-500 text-white font-extrabold flex items-center justify-center rounded-full"
+      (click)="onClick(); $event.stopPropagation()"
+    >
+    ♡
+    </button>
   </section>
 
   <section class="px-2">

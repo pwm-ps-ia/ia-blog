@@ -23,6 +23,7 @@
         [fav]="fav"
         [news]="getNews(fav.id)"
         routerLink = "/new-detailed"
+        (favClick)="removeFav($event)"
       ></app-favourite-card>
     </div>
   </section>

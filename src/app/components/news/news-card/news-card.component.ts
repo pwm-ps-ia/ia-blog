@@ -17,5 +17,6 @@ export class NewsCardComponent  implements OnInit {
   }
   
   @Input() news!: QueryDocumentSnapshot<DocumentData>;
+  @Input() isFav!: boolean;
   @Output() favClick = new EventEmitter();
 }

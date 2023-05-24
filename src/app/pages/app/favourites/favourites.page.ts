@@ -29,7 +29,6 @@ export class FavouritesPage implements OnInit {
   }
 
   getNews(favUid: string) {
-    console.log(this.docs);
     return this.docs[this.favs.findIndex(x => x.id === favUid)];    
   }
 

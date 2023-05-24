@@ -21,7 +21,9 @@
   <div class = " flex flex-col p-2 gap-y-3">
     <app-news-card *ngFor="let doc of docs"
       [news]="doc"
+      [isFav]="isFav(doc.id)"
       routerLink = "/new-detailed"
+      (favClick)="toggleFav($event)"
     ></app-news-card>
   </div>
 </section>
