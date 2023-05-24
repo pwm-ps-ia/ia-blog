@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { collection, getDocs, addDoc, doc, query, where, deleteDoc, updateDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, doc, query, where, deleteDoc, updateDoc, setDoc } from 'firebase/firestore';
 import { db } from 'src/main';
+import { User } from 'src/types/db/user';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +19,7 @@ export class ProfileService {
     return updateDoc(doc(db, "profiles", profUid), profile);
   }
 
+  createProfile(user: User) {
+    return setDoc(doc(db, "profiles"), user);
+  }
 }
