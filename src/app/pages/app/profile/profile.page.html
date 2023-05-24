@@ -13,7 +13,7 @@
     <img
       [src]="profile['avatar']"
       alt="Descripción de la imagen"
-      class="w-[6rem] h-[6rem] rounded-full mt-[-3rem]"
+      class="w-[6rem] h-[6rem] rounded-full mt-[-3rem] border-4 border-white"
     />
   </div>
   <div class="mx-5 rounded-lg">
@@ -29,6 +29,7 @@
           </p>
           <input
             *ngIf="this.editUserName"
+            (change)="this.disableAllEdits(); this.submitChanges('username', $event)"
             value="{{ profile['username'] }}"
             placeholder="Edit here"
             class="w-full bg-gray-100 px-2 py-2 rounded-md"
@@ -53,6 +54,7 @@
           <input
             *ngIf="this.editFirstName"
             value="{{ profile['first_name'] }}"
+            (change)="this.disableAllEdits(); this.submitChanges('first_name', $event)"
             placeholder="Edit here"
             class="w-full bg-gray-100 px-2 py-2 rounded-md"
           />
@@ -75,6 +77,7 @@
           </p>
           <input
             value="{{ profile['last_name'] }}"
+            (change)="this.disableAllEdits(); this.submitChanges('last_name', $event)"
             *ngIf="this.editLastName"
             placeholder="Edit here"
             class="w-full bg-gray-100 px-2 py-2 rounded-md"
@@ -95,20 +98,6 @@
           <p *ngIf="!this.editEmail" class="text-gray-500">
             {{ this.auth.user?.email }}
           </p>
-          <input
-            value="{{ this.auth.user?.email }}"
-            *ngIf="this.editEmail"
-            placeholder="Edit here"
-            class="w-full bg-gray-100 px-2 py-2 rounded-md"
-          />
-
-          <div
-            *ngIf="!this.editEmail"
-            (click)="this.disableAllEdits(); this.editEmail = true"
-            class="bg-gray-100 h-6 w-6 rounded-full flex justify-center items-center text-md hover:gray-200"
-          >
-            ✏️
-          </div>
         </div>
       </div>
     </div>

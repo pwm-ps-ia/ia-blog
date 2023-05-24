@@ -16,6 +16,7 @@ export class ProfilePage implements OnInit {
   editLastName = false;
   editFirstName = false;
   editUserName = false;
+  profileUUID: string | null = null;
 
   constructor(public auth: AuthService, public profService: ProfileService) {}
 
@@ -29,11 +30,15 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     this.profService.getProfile(this.auth.user?.uid ?? '').then((x) => {
       this.profile = x.docs[0].data();
+      this.profileUUID = x.docs[0].id;
     });
   }
 
-  submitChanges(update: any) {
-    console.log('entered');
-    this.profService.updateProfile(this.auth.user?.uid ?? '', update);
+  submitChanges(update_field: any, event: Event) {
+    this.profService.updateProfile(this.profileUUID || '', {
+      [update_field]: (event.target as HTMLInputElement).value,
+    });
+
+    this.ngOnInit();
   }
 }
