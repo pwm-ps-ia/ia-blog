@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title class="ion-text-center">login</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
@@ -8,12 +8,26 @@
     class="flex flex-col gap-y-9 h-full justify-center"
     [formGroup]="loginForm"
   >
+    <div class="flex flex-col justify-center items-center mb-10">
+      <h1 class="font-semibold text-gray-700 text-4xl text-center">
+        Welcome <span class="text-red-500">back!</span>
+      </h1>
+      <h1 class="text-gray-700 text-md text-center mt-3">
+        The faster you fill up, the faster you create the future
+      </h1>
+    </div>
     <div class="flex flex-col gap-y-4">
+      <div class="text-gray-500">
+        <label>Email:</label>
+      </div>
       <input
         class="px-5 py-3 rounded-lg"
         placeholder="email"
         formControlName="email"
       />
+      <div class="text-gray-500">
+        <label>Password:</label>
+      </div>
       <input
         type="password"
         class="px-5 py-3 rounded-lg"
@@ -28,12 +42,16 @@
       >
         Sign in
       </button>
-      <button
-        routerLink="/auth/register"
-        class="w-full px-5 py-3 font-semibold rounded-lg border-red-500 border-2 transition-all !text-gray-700"
-      >
-        Sign up
-      </button>
+      <div class="flex items-center justify-center">
+        <p class="font-normal text-gray-400">
+          Don´t have an account?
+          <span
+            routerLink="/auth/register"
+            class="w-full px-1 py-3 font-semibold transition-all !text-gray-700"
+            >Sign up</span
+          >
+        </p>
+      </div>
     </div>
   </form>
 </ion-content>
