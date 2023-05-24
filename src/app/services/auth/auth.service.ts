@@ -60,7 +60,9 @@ export class AuthService {
         email: payload.email,
         password: payload.password,
       });
-    } catch (err: any) {}
+    } catch (err: any) {
+      throw err;
+    }
   }
   public async logOut() {
     const auth = getAuth();
