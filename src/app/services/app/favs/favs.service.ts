@@ -23,9 +23,9 @@ export class FavsService {
     );
   }
 
-  getNewsFav(newsUid: string) {
+  getNewsFav(newsUid: string, userUid: string) {
     return getDocs(
-      query(collection(db, 'favourite_news'), where('news_id', '==', newsUid))
+      query(collection(db, 'favourite_news'), where('news_id', '==', newsUid), where('user_id', '==', userUid))
     );
   }
 

@@ -30,7 +30,7 @@ export class NewsPage implements OnInit {
       x.docs
         .map((y) => y.id)
         .forEach((y) =>
-          this.favService.getNewsFav(y).then((z) => {
+          this.favService.getNewsFav(y, this.authService.user?.uid ?? '').then((z) => {
             this.favs.push(z.docs.length >= 1);
             if (z.docs.length >= 1) {
               this.newsToFavMap.set(y, z.docs[0].id);
