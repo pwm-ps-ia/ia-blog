@@ -5,38 +5,45 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div style="width: 100%; height: 3.75rem; background-color:#F54E4E ;"></div>
-  <div style="position: relative; display: inline-block; padding-left: 0.938rem; margin-left: 32%;">
-    <img [src]="profile['avatar']" alt="Descripción de la imagen" style="width: 6rem; height: 6rem; transform: translateY(-40px); border-radius: 50%; box-shadow: 0px 0px 0px 4px white;">
+  <div style="width: 100%; height: 3.75rem; background-color: #f54e4e"></div>
+  <div class="w-full justify-center items-center flex mb-20">
+    <img
+      [src]="profile['avatar']"
+      alt="Descripción de la imagen"
+      class="w-[6rem] h-[6rem] rounded-full mt-[-3rem]"
+    />
   </div>
-
-  <ion-card class = "ion-text-left" style="transform: translateY(-50px);">
-    <ion-card-header>
-      <ion-card-title style = "color:#272727; font-weight: 600; font-size: 1.25rem;">Personal Information</ion-card-title>
-    </ion-card-header>
-    <ion-card-content style="display: flex;flex-direction: column; row-gap: 20px;">
+  <div class="mx-5 rounded-lg">
+    <div class="p-5 w-full bg-white shadow-sm rounded-lg flex flex-col gap-y-5">
+      <h1 class="text-xl font-semibold text-gray-800">Personal Information</h1>
       <div>
-        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">UserName:</h1>
-        <p>{{ profile['username'] }}</p>  
+        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">
+          UserName:
+        </h1>
+        <p>{{ profile['username'] }}</p>
       </div>
       <div>
-        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">Name:</h1>
-        <p>{{ profile['first_name'] }}</p>  
+        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">Name:</h1>
+        <p>{{ profile['first_name'] }}</p>
       </div>
       <div>
-        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">Surname:</h1>
-        <p>{{ profile['last_name'] }}</p>  
+        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">
+          Surname:
+        </h1>
+        <p>{{ profile['last_name'] }}</p>
       </div>
       <div>
-        <h1 style="color:#272727; font-size: 1rem; font-weight: 600;">Gmail:</h1>
-        <p>{{ this.auth.user?.email }}</p>  
+        <h1 class="mb-1" class="text-gray-800 text-lg font-semibold">Gmail:</h1>
+        <p>{{ this.auth.user?.email }}</p>
       </div>
-    </ion-card-content>
-  </ion-card>
-  <div>
-    <button (click)="this.auth.logOut()" style = "height: 40px; width: 150px;margin-left: 30%; background-color: #F54E4E; transform: translateY(-20px); color: white; font-weight: 600; border-radius: 12px;">
+    </div>
+  </div>
+  <div class="w-full justify-center flex mt-5">
+    <button
+      (click)="this.auth.logOut()"
+      class="px-5 py-3 bg-red-500 font-semibold rounded-xl"
+    >
       Log Out
     </button>
   </div>
-  
 </ion-content>
